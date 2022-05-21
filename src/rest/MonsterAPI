@@ -1,0 +1,26 @@
+const MONSTERS_ENDPOINT = 'https://www.dnd5api.co/api/monsters';
+
+class MonsterAPI {
+    get = async () => {
+        try{
+            const resp = await fetch(MONSTERS_ENDPOINT);
+            const data = await resp.json();
+            return data;
+        } catch(error) {
+            console.log('fetchMonsters had an issue.', error);
+        }
+    }
+
+    put = async (monster) => {
+        const resp = await fetch(`${MONSTERS_ENDPOINT}/aboleth`, {
+            method: 'PUT',
+            header: {
+                'Content-Tupe': 'application/json'
+            },
+            body: JSON.stringify(monster)
+        });
+        return await resp.json();
+    }
+}
+
+export const monstersAPI = new MonsterAPI();
