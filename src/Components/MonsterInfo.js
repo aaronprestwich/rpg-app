@@ -8,6 +8,7 @@ const MonsterInfo = ({monsterInfo}) => {
         <>
         <div>
             <h2>{monsterInfo.name}</h2>
+            {/* <h5>{monsterInfo.note}</h5> */}
             <p>AC {monsterInfo.armor_class}</p>
             <p>HP {monsterInfo.hit_points}</p>
             <p>Str {monsterInfo.strength}</p>

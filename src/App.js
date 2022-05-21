@@ -11,7 +11,6 @@ function App() {
     <div className="App">
       <Header/>
       <Container/>
-      {/* <MonsterList monsters = {monsters}/> */}
     </div>
   );
 }

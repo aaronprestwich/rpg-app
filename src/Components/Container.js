@@ -25,7 +25,7 @@ const Container = () => {
             .then(response => {
                 console.log(response);
                 if(!response.ok){
-                    throw Error(`${id} is not found in the DND 5e API https://www.dnd5eapi.co/api/monsters/${id}. Try "aboleth" or a name without spaces.`);
+                    throw Error(`${id} is not found in the DND 5e API https://www.dnd5eapi.co/api/monsters/${id}. Try "aboleth".`);
                 }
                 return response.json()})
             .then(data => {setMonsterID(data.Name) ; setInfo(data); console.log(data); setError(null)}) 
@@ -41,7 +41,7 @@ const Container = () => {
         <button onClick={getNewID}>Get New Monster</button>
         <button>Remove Monster</button>
         {error && <div> { error }</div>}
-        <MonsterInfo monsterInfo={monsterInfo}/>
+        <MonsterInfo monsterInfo = {monsterInfo}/>
         <MonsterList monsterInfo = {monsterInfo}/>
         
         </>
