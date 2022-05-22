@@ -8,7 +8,6 @@ const Container = () => {
     const url = 'https://www.dnd5eapi.co/api';
     const monsterIDRef = useRef();
     const [error, setError] = useState(null);
-    let [monsterID, setMonsterID] = useState('');
     let [monsterInfo, setInfo] =useState('');
 
     const getNewID = (event) => {
@@ -19,6 +18,7 @@ const Container = () => {
         getNewMonster(id.toLowerCase());
     }
 
+    // GET monster object
     const getNewMonster = (id) =>{
         
             fetch(`${url}/monsters/${id}`)
@@ -28,7 +28,7 @@ const Container = () => {
                     throw Error(`${id} is not found in the DND 5e API https://www.dnd5eapi.co/api/monsters/${id}. Try "aboleth".`);
                 }
                 return response.json()})
-            .then(data => {setMonsterID(data.Name) ; setInfo(data); console.log(data); setError(null)}) 
+            .then(data => {setInfo(data); console.log(data); setError(null)}) 
             .catch(err =>{
                 setError(err.message);
             })

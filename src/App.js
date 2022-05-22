@@ -1,7 +1,6 @@
 import React, {useState, useRef} from 'react';
 import './App.css';
 import Container from './Components/Container';
-import MonsterList from './Components/MonsterList';
 
 
 function App() {
